@@ -68,6 +68,7 @@ export default class AvengersNative extends Component {
           dataSource={this.state.dataSource}
           renderRow={this.renderMovie}
           style={styles.listView}
+          enableEmptySections={true}
         />
       </View>
     );
