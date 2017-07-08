@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   },
   rightContainer: {
     flex: 1,
+    marginLeft: 10
   },
   title: {
     fontSize: 20,
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
   },
   listView: {
     backgroundColor: '#F5FCFF',
+    marginBottom: 50
   }
 });
 

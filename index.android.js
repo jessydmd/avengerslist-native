@@ -27,7 +27,6 @@ export default class AvengersNative extends Component {
       loaded: false,
       filterText : ""
     };
-    this.handleFilterTextInput = this.handleFilterTextInput.bind(this);
   }
 
 
@@ -41,6 +40,7 @@ export default class AvengersNative extends Component {
     .then((responseData) => {
       this.setState({
         dataSource: this.state.dataSource.cloneWithRows(responseData),
+        result: responseData,
         loaded: true,
       });
     })
@@ -48,8 +48,11 @@ export default class AvengersNative extends Component {
  }
 
  handleFilterTextInput(filterText) {
+   const filteredList = this.state.result.filter(avenger => avenger.name.toLowerCase().indexOf(filterText.toLowerCase()) !== -1);
+
     this.setState({
-      filterText: filterText
+      filterText: filterText,
+      dataSource: this.state.dataSource.cloneWithRows(filteredList)
     });
   }
 
@@ -60,7 +63,7 @@ export default class AvengersNative extends Component {
 
     return (
       <View>
-        <Header filterText={this.state.filterText} onFilterTextInput={this.handleFilterTextInput} />
+        <Header filterText={this.state.filterText} onFilterTextInput={this.handleFilterTextInput.bind(this)} />
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderMovie}
