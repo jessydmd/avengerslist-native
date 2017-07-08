@@ -1,0 +1,31 @@
+{
+	"name": "AvengersNative",
+	"version": "0.0.1",
+	"description": "Avengers List, React Native port",
+	"private": true,
+	"scripts": {
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"test": "jest"
+	},
+	"keywords": [
+    "react",
+    "react-native",
+    "avengers",
+    "rum&code"
+  ],
+	"author": "Jessy Diamond",
+	"license": "ISC",
+	"dependencies": {
+		"react": "16.0.0-alpha.12",
+		"react-native": "0.46.1"
+	},
+	"devDependencies": {
+		"babel-jest": "20.0.3",
+		"babel-preset-react-native": "2.1.0",
+		"jest": "20.0.4",
+		"react-test-renderer": "16.0.0-alpha.12"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}
